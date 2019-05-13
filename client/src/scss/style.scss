@@ -1,0 +1,43 @@
+$body-bg: #fafafa;
+
+$enable-responsive-font-sizes: true;
+// $theme-colors: (
+//     "dark": #252424
+// );   
+$enable-shadows: true;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+}
+
+// @media (max-width: 500px){
+//     $body-bg: rgb(235, 17, 17);
+//     $body-color: rgb(235, 17, 17);
+//     .container{
+//         max-width: 1224px;
+//     }
+// }
+
+
+.scroll-x {
+    overflow-x: scroll
+}
+.scroll-y {
+    overflow-y: scroll
+}
+
+
+@import "bootstrap/scss/bootstrap.scss";
+
+
+
+.card-shoes {
+    &:hover {
+        border: 0.04em solid;
+        border-color: $primary;
+    }
+}
