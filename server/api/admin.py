@@ -19,7 +19,7 @@ class ProductAdmin(admin.ModelAdmin):
 class ShoesAdminForm(forms.ModelForm):
     class Meta:
         model = Shoes
-        fields = ['title', 'slug', 'description', 'price', 'featured', 'active', 'image',
+        fields = ['brand', 'title', 'slug', 'description', 'price', 'featured', 'active', 'image',
             'sizes', 'colors'
         ]
 
