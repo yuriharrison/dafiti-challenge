@@ -33,6 +33,7 @@ The Django Administration site was configured accordingly. Meaning you can manag
 
 The Django Administration site is available in the path `admin/`.
 
+
 The API was created with the required endpoints, being:
 - GET     api/shoes/
 - POST    api/shoes/
@@ -47,6 +48,9 @@ The `HyperlinkedModelSerializer` was used to make the API more 'Hypermedia like'
 The `csv-import` endpoint takes an csv file and use `pandas` to determined the product price of each row. To do that, it calculates the price with the columns `cost` (product cost) and `profit` (desired profit). After that it drops both columns and add a new `price` column. After the price is determined each row is converted to a `Shoes` object and passed through the `before_save` method. Then all the objects are passed to the `bulk_create` ([more about bulk_create](https://docs.djangoproject.com/en/2.1/ref/models/querysets/#bulk-create)) for a quick insertion in the database. If any row fail in the process or any required column is missing, the whole batch will be discarted and the `400 - Bad Request` response will be returned.
 
 **There are an example file in the repository at `resources/shoes.csv`**
+
+
+The Django Rest Framework provides an html interface were you can browse the API. The API is available at `api/`.
 
 
 ## Run the Application
