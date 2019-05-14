@@ -13,6 +13,18 @@ Also, the npm package `@reach/router` was used for routing, all API calls are ha
 
 The client design was develop with the mobile-first approach with the help of Bootstrap 4.
 
+#### Functionalities
+
+Screens:
+- `/` | `shoes/` :
+    - List the shoes page by page.
+    - Expand a detailed card when on shoe is clicked.
+- `import/` :
+    - Import a CSV file (more in the API specs bellow)
+
+**There are an example file in the repository at `resources/shoes.csv`**
+
+
 ### About the Server Side
 
 In the server side was created two models, a main model `Product` a generic product model to fit multiple kinds of products and a second proxy model ([about proxy models](https://docs.djangoproject.com/en/2.2/topics/db/models/#proxy-models)) was created `Shoes` proxy models uses the same table as the father (`Product`) which fits a good architecture to this project.
@@ -34,7 +46,7 @@ The `HyperlinkedModelSerializer` was used to make the API more 'Hypermedia like'
 
 The `csv-import` endpoint takes an csv file and use `pandas` to determined the product price of each row. To do that, it calculates the price with the columns `cost` (product cost) and `profit` (desired profit). After that it drops both columns and add a new `price` column. After the price is determined each row is converted to a `Shoes` object and passed through the `before_save` method. Then all the objects are passed to the `bulk_create` ([more about bulk_create](https://docs.djangoproject.com/en/2.1/ref/models/querysets/#bulk-create)) for a quick insertion in the database. If any row fail in the process or any required column is missing, the whole batch will be discarted and the `400 - Bad Request` response will be returned.
 
-**There are an example file in the path `resources/shoes.csv`**
+**There are an example file in the repository at `resources/shoes.csv`**
 
 
 ## Run the Application
