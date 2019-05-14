@@ -1,5 +1,24 @@
 # Dafiti Challenge
 
+## Live App
+
+This application is currently run live on the Google Cloud Platform.
+You can access it in the links bellow.
+
+#### Deployment
+
+- Web SPA running at Firebase Hosting
+- API running at App Engine Flexible Environment
+
+
+#### Links
+
+- Web SPA - https://dafiti-challenge.firebaseapp.com/
+    - Import data: https://dafiti-challenge.firebaseapp.com/import
+        * There are an example file in the repository at `resources/shoes.csv`. You can use  it to import a hundred more products. The file don't have any unique column, thus you can import it more than once.
+- Rest Framework Browser - https://dafiti-challenge.appspot.com/api/
+- Django Admin - https://dafiti-challenge.appspot.com/admin/
+
 
 ## Architecture
 
@@ -27,7 +46,8 @@ Screens:
 
 ### About the Server Side
 
-In the server side was created two models, a main model `Product` a generic product model to fit multiple kinds of products and a second proxy model ([about proxy models](https://docs.djangoproject.com/en/2.2/topics/db/models/#proxy-models)) was created `Shoes` proxy models uses the same table as the father (`Product`) which fits a good architecture to this project.
+In the server side was created two models, a main model `Product` a generic product model to fit multiple kinds of products and a second proxy model ([about proxy models](https://docs.djangoproject.com/en/2.2/topics/db/models/#proxy-models)) was created, `Shoes` proxy models uses the same table as the father (`Product`) which fits a good architecture to this project. Also was implemented a custom Manager and a custom QuerySet.
+
 
 The Django Administration site was configured accordingly. Meaning you can manage `Shoes` having only the necessary fields or `Products` having the full spectrum. You could use this pattern to create other kinds of products and be able to set user permissions as necessary.
 
