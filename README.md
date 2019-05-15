@@ -1,24 +1,5 @@
 # Dafiti Challenge
 
-## Live App
-
-This application is currently run live on the Google Cloud Platform.
-You can access it in the links bellow.
-
-#### Deployment
-
-- Web SPA running at Firebase Hosting
-- API running at App Engine Flexible Environment
-
-
-#### Links
-
-- Web SPA - https://dafiti-challenge.firebaseapp.com/
-    - Import data: https://dafiti-challenge.firebaseapp.com/import
-        * There are an example file in the repository at `resources/shoes.csv`. You can use  it to import a hundred more products. The file don't have any unique column, thus you can import it more than once.
-- Rest Framework Browser - https://dafiti-challenge.appspot.com/api/
-- Django Admin - https://dafiti-challenge.appspot.com/admin/
-
 
 ## Architecture
 
